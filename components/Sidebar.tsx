@@ -59,12 +59,11 @@ const Sidebar = () => {
               </div>
             </div>
           )}
+          <Discover />
+          <SuggestedAccounts />
+          <Footer />
         </div>
       )}
-
-      <Discover />
-      <SuggestedAccounts />
-      <Footer />
     </div>
   );
 };
