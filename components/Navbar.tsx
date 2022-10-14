@@ -8,10 +8,12 @@ import { IoMdAdd } from "react-icons/io";
 import Logo from "../assets/logo/tiktik-logo.png";
 import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { createOrGetUser } from "../utils";
+import useAuthStore from "../store/authStore";
 
 const Navbar = () => {
 
-  const user = false;
+  // Hook to store user information persistently
+  const {userProfile, addUser} = useAuthStore();
 
   return (
     <div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-2 px-4">
@@ -29,11 +31,11 @@ const Navbar = () => {
         Search
       </div>
       <div>
-        {user ? (
-          <div>Logged In </div>
+        {userProfile ? (
+          <div>{userProfile.userName}</div>
         ) : (
           <GoogleLogin 
-            onSuccess={(response) => createOrGetUser(response)}
+            onSuccess={(response) => createOrGetUser(response, addUser)}
             onError={()=> console.log("Error")}
           />
         )}
