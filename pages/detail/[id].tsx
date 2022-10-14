@@ -25,6 +25,7 @@ const Detail = ({ postDetails }: IProps) => {
   const [isVideoMuted, setIsVideoMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const router = useRouter();
+  const {userProfile} = useAuthStore();
 
   // Set if video is playing on press
   const onVideoClick = () => {
@@ -48,9 +49,16 @@ const Detail = ({ postDetails }: IProps) => {
 
   return (
     <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
+
+      {/* Video section (Left Side) */}
       <div className="relative flex-2 w-[1000]px lg:w-9/12 flex justify-center items-center bg-black bg-no-repeat bg-cover bg-center">
         <div className="absolute top-6 left-2 lg:left-6 flex gap-6 z-50">
-          <p className="cursor-pointer" onClick={()=>{router.back()}}>
+          <p
+            className="cursor-pointer"
+            onClick={() => {
+              router.back();
+            }}
+          >
             <MdOutlineCancel className="text-white text-[35px]" />
           </p>
         </div>
@@ -83,6 +91,51 @@ const Detail = ({ postDetails }: IProps) => {
             </button>
           )}
         </div>
+      </div>
+
+      {/* Details section (right side) */}
+      <div className="relative w-[1000px] md:w-[900px] lg:w-[700px] px-6">
+        <div className="lg:mt-20 mt-10 mb-4">
+          <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
+            <div className="ml-4 md:w-20 md:h-20 w-16 h-16">
+              <Link href="/">
+                <>
+                  <Image
+                    width={62}
+                    height={62}
+                    className="rounded-full"
+                    src={post.postedBy.image}
+                    alt="profile photo"
+                    layout="responsive"
+                  />
+                </>
+              </Link>
+            </div>
+            <Link href="/">
+              <div className="flex mt-3 flex-col gap-2">
+                <p className="flex gap-2 items-center md:text-md font-bold text-primary">
+                  {post.postedBy.userName}
+                  {` `}
+                  <GoVerified className="text-blue-400 text-md" />
+                </p>
+                <p className="capitalized font-md text-xs text-grey-500 sm:hidden md:block">
+                  {post.postedBy.userName}
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+        <p className="px-6 text-lg text-gray-600">{post.caption}</p>
+        <div className="mt-10 px-10">
+            {userProfile && (
+                <LikeButton 
+                
+                />
+            )}
+        </div>
+        <Comments 
+        
+        />
       </div>
     </div>
   );
