@@ -14,6 +14,8 @@ import useAuthStore from "../../store/authStore";
 import { Video } from "../../types";
 import axios from "axios";
 import { BASE_URL } from "../../utils";
+import LikeButton from "../../components/LikeButton";
+import Comments from "../../components/Comments";
 
 interface IProps {
   postDetails: Video;
@@ -25,7 +27,7 @@ const Detail = ({ postDetails }: IProps) => {
   const [isVideoMuted, setIsVideoMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const router = useRouter();
-  const {userProfile} = useAuthStore();
+  const {userProfile}: any = useAuthStore();
 
   // Set if video is playing on press
   const onVideoClick = () => {
@@ -37,6 +39,16 @@ const Detail = ({ postDetails }: IProps) => {
       setPlaying(true);
     }
   };
+
+  const handleLike = async(like: boolean) => {
+    if(userProfile) {
+        const response = await axios.put(`${BASE_URL}/api/like`, {
+            userId: userProfile._id,
+            postId: post._id,
+            like
+        })
+    }
+  }
 
   // Check if Video if muted, and set video audio to muted
   useEffect(() => {
@@ -129,7 +141,8 @@ const Detail = ({ postDetails }: IProps) => {
         <div className="mt-10 px-10">
             {userProfile && (
                 <LikeButton 
-                
+                    handleLike = {() => handleLike(true)}
+                    handleDislike = {() => handleLike(false)}
                 />
             )}
         </div>
