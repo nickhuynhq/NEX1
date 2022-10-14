@@ -1,4 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { client } from "../../../utils/client";
+import { postDetailQuery } from "../../../utils/queries";
 
 export default async function handler(
   req: NextApiRequest,
@@ -6,6 +8,10 @@ export default async function handler(
 ) {
   if (req.method === "GET") {
     const {id} = req.query;
+    const query = postDetailQuery(id);
 
+    // Get the data
+    const data = await client.fetch(query);
+    res.status(200).json(data[0]);
   }
 }
