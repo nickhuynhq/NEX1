@@ -16,7 +16,7 @@ const Navbar = () => {
   const {userProfile, addUser, removeUser} = useAuthStore();
 
   return (
-    <div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-2 px-4">
+    <nav className="w-full flex justify-between items-center border-b-2 border-gray-200 py-4 px-4">
       <Link href="/">
         <div className="w-[6.25rem] md:w-[8.125rem]">
           <Image
@@ -66,7 +66,7 @@ const Navbar = () => {
           />
         )}
       </div>
-    </div>
+    </nav>
   );
 };
 

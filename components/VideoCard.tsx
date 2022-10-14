@@ -32,7 +32,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
   
 
   return (
-    <div className="flex flex-col border-b-2 border-gray-200 pb-6">
+    <div className="flex flex-col border-b-2 border-gray-200 pb-6 mr-8">
     {/* Video Heading and Labels */}
       <div>
         <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
@@ -77,30 +77,30 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
               loop
               ref={videoRef}
               src={post.video.asset.url}
-              className="lg:w-[650px] h-[300px] md:h-[400px] lg:h-[528px] w-[200px] rounded-2xl cursor-pointer bg-gray-100"
+              className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[528px] w-[200px] rounded-2xl cursor-pointer bg-gray-100"
             ></video>
           </Link>
 
           {/* Displaying Video Control Buttons */}
           {isHover && (
-            <div className="absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] p-3">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-between w-[100px] gap-6 pr-2">
               {playing ? (
                 <button onClick={onVideoPress}>
-                  <BsFillPauseFill className="text-black text-2xl lg:text-4xl" />
+                  <BsFillPauseFill className="text-black bg-white p-1 rounded-md text-4xl lg:text-5xl hover:bg-gray-400" />
                 </button>
               ) : (
                 <button onClick={onVideoPress}>
-                  <BsFillPlayFill className="text-black text-2xl lg:text-4xl" />
+                  <BsFillPlayFill className="text-black bg-white p-1 rounded-md text-4xl lg:text-5xl hover:bg-gray-400" />
                 </button>
               )}
 
               {isVideoMuted ? (
                 <button onClick={()=> setIsVideoMuted(false)}>
-                  <HiVolumeOff className="text-black text-2xl lg:text-4xl" />
+                  <HiVolumeOff className="text-black bg-white p-1 rounded-md text-4xl lg:text-5xl hover:bg-gray-400" />
                 </button>
               ) : (
                 <button onClick={()=> setIsVideoMuted(true)}>
-                  <HiVolumeUp className="text-black text-2xl lg:text-4xl" />
+                  <HiVolumeUp className="text-black  bg-white p-1 rounded-md text-4xl lg:text-5xl hover:bg-gray-400" />
                 </button>
               )}
             </div>
