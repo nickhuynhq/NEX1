@@ -24,7 +24,9 @@ const Detail = ({ postDetails }: IProps) => {
   const [playing, setPlaying] = useState(false);
   const [isVideoMuted, setIsVideoMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const router = useRouter();
 
+  // Set if video is playing on press
   const onVideoClick = () => {
     if (playing) {
       videoRef?.current?.pause();
@@ -35,13 +37,20 @@ const Detail = ({ postDetails }: IProps) => {
     }
   };
 
+  // Check if Video if muted, and set video audio to muted
+  useEffect(() => {
+    if (post && videoRef?.current) {
+      videoRef.current.muted = isVideoMuted;
+    }
+  }, [post, isVideoMuted]);
+
   if (!post) return null;
 
   return (
     <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
       <div className="relative flex-2 w-[1000]px lg:w-9/12 flex justify-center items-center bg-black bg-no-repeat bg-cover bg-center">
         <div className="absolute top-6 left-2 lg:left-6 flex gap-6 z-50">
-          <p>
+          <p className="cursor-pointer" onClick={()=>{router.back()}}>
             <MdOutlineCancel className="text-white text-[35px]" />
           </p>
         </div>
@@ -66,11 +75,11 @@ const Detail = ({ postDetails }: IProps) => {
         <div className="absolute top-5 lg:top-10 right-5 lg:right-10 cursor-pointer">
           {isVideoMuted ? (
             <button onClick={() => setIsVideoMuted(false)}>
-              <HiVolumeOff className="text-black bg-white p-1 rounded-md text-4xl lg:text-5xl hover:bg-gray-400" />
+              <HiVolumeOff className="text-white rounded-md text-4xl lg:text-5xl hover:text-gray-400" />
             </button>
           ) : (
             <button onClick={() => setIsVideoMuted(true)}>
-              <HiVolumeUp className="text-black  bg-white p-1 rounded-md text-4xl lg:text-5xl hover:bg-gray-400" />
+              <HiVolumeUp className="text-white rounded-md text-4xl lg:text-5xl hover:text-gray-400" />
             </button>
           )}
         </div>

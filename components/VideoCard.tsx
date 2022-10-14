@@ -20,20 +20,27 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  // Set if video is playing on press
   const onVideoPress = () => {
-    if(playing) {
-        videoRef?.current?.pause();
-        setPlaying(false);
+    if (playing) {
+      videoRef?.current?.pause();
+      setPlaying(false);
     } else {
-        videoRef?.current?.play();
-        setPlaying(true);
+      videoRef?.current?.play();
+      setPlaying(true);
     }
-  }
-  
+  };
+
+  // Check if Video if muted, and set video audio to muted
+  useEffect(() => {
+    if (videoRef?.current) {
+      videoRef.current.muted = isVideoMuted;
+    }
+  }, [isVideoMuted]);
 
   return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6 mr-8">
-    {/* Video Heading and Labels */}
+      {/* Video Heading and Labels */}
       <div>
         <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
           <div className="md:w-16 md:h-16 w-10 h-10">
@@ -65,7 +72,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
         </div>
       </div>
 
-    {/* Video Section */}
+      {/* Video Section */}
       <div className="lg:ml-20 flex gap-4 relative">
         <div
           onMouseEnter={() => setIsHover(true)}
@@ -95,11 +102,11 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
               )}
 
               {isVideoMuted ? (
-                <button onClick={()=> setIsVideoMuted(false)}>
+                <button onClick={() => setIsVideoMuted(false)}>
                   <HiVolumeOff className="text-black bg-white p-1 rounded-md text-4xl lg:text-5xl hover:bg-gray-400" />
                 </button>
               ) : (
-                <button onClick={()=> setIsVideoMuted(true)}>
+                <button onClick={() => setIsVideoMuted(true)}>
                   <HiVolumeUp className="text-black  bg-white p-1 rounded-md text-4xl lg:text-5xl hover:bg-gray-400" />
                 </button>
               )}
