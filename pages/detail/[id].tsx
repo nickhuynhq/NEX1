@@ -54,7 +54,7 @@ const Detail = ({ postDetails }: IProps) => {
     }
   };
 
-  const addComment = async (e) => {
+  const addComment = async (e: React.FormEvent) => {
     e.preventDefault();
     if (userProfile && comment) {
       setIsPostingComment(true);
