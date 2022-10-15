@@ -29,6 +29,7 @@ module.exports = {
       },
       colors: {
         primary: 'rgb(22, 24, 35)',
+        headings: '#2861f6'
       },
       height: {
         '88vh': '88vh',

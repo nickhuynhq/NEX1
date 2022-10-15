@@ -21,7 +21,7 @@ const Footer = () => {
       <List items={footerList1} mt={false} />
       <List items={footerList2} mt />
       <List items={footerList3} mt />
-      <p className="text-grey-400 text-sm mt-5">2022 NextReel</p>
+      <p className="text-grey-400 text-sm mt-5">2022 NEX1</p>
     </div>
   );
 };
