@@ -29,6 +29,8 @@ const Footer = () => {
         <a
           href="https://github.com/nickhuynhq/"
           className="flex justify-center items-center xl:justify-start text-4xl duration-150 hover:text-headings cursor-pointer"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <AiFillGithub />
           <p className="hidden xl:block text-grey-400 text-sm ml-2">
@@ -39,6 +41,8 @@ const Footer = () => {
         <a
           href="https://github.com/nickhuynhq/"
           className="flex justify-center items-center xl:justify-start text-4xl duration-150 hover:text-headings cursor-pointer"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <AiFillLinkedin />
           <p className="hidden xl:block text-grey-400 text-sm ml-2">
