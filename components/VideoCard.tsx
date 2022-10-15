@@ -44,20 +44,18 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
       <div>
         <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
           <div className="md:w-16 md:h-16 w-10 h-10">
-            <Link href="/">
-              <>
-                <Image
-                  width={62}
-                  height={62}
-                  className="rounded-full"
-                  src={post.postedBy.image}
-                  alt="profile photo"
-                  layout="responsive"
-                />
-              </>
+            <Link href={`/profile/${post.postedBy._id}`}>
+              <Image
+                width={62}
+                height={62}
+                className="rounded-full"
+                src={post.postedBy.image}
+                alt="profile photo"
+                layout="responsive"
+              />
             </Link>
           </div>
-          <Link href="/">
+          <Link href={`/profile/${post.postedBy._id}`}>
             <div className="flex items-center gap-2">
               <p className="flex gap-2 items-center md:text-md font-bold text-primary">
                 {post.postedBy.userName}
@@ -73,7 +71,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
       </div>
 
       {/* Video Section */}
-      <div className="lg:ml-20 flex gap-4 relative">
+      <div className="lg:ml-20 flex justify-center gap-4 relative">
         <div
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
@@ -84,7 +82,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
               loop
               ref={videoRef}
               src={post.video.asset.url}
-              className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[528px] w-[200px] rounded-2xl cursor-pointer bg-gray-100"
+              className="lg:w-[600px] h-[480px] md:h-[480px] lg:h-[528px] w-[360px] rounded-2xl cursor-pointer bg-gray-100"
             ></video>
           </Link>
 
