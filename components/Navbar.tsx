@@ -45,14 +45,14 @@ const Navbar = () => {
       <div className="relative hidden md:block">
         <form
           onSubmit={handleSearch}
-          className="absolute md:static top-10 -left-20 bg-white"
+          className="absolute md:static top-10 -left-20  bg-white"
         >
           <input
             type="text"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search accounts and videos"
-            className="bg-primary p-3 md:text-md font-medium border-2 border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 w-[260px] md:w-[350px] rounded-full md:top-0"
+            className="bg-primary p-3 md:text-md font-medium border-2 duration-150 border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 w-[260px] md:w-[350px] rounded-full md:top-0"
           />
           <button
             onClick={handleSearch}
@@ -64,9 +64,9 @@ const Navbar = () => {
       </div>
       <div>
         {user ? (
-          <div className="flex gap-5 md:gap-10">
+          <div className="flex gap-5 md:gap-8">
             <Link href="/upload">
-              <button className="border-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2">
+              <button className="border-2 px-2 md:px-4 text-md font-semibold rounded-md duration-150 flex items-center gap-2 hover:bg-headings hover:border-white hover:text-white">
                 <IoMdAdd className="text-xl" /> {` `}
                 <span className="hidden md:block">Upload</span>
               </button>
@@ -84,13 +84,13 @@ const Navbar = () => {
             )}
             <button
               type="button"
-              className="px-2"
+              className="flex gap-2 px-2 items-center rounded-md duration-150 hover:bg-red-500 hover:text-white"
               onClick={() => {
                 googleLogout();
                 removeUser();
               }}
             >
-              <AiOutlineLogout color="red" fontSize={21} />
+              <span>Log Out</span>
             </button>
           </div>
         ) : (
