@@ -39,7 +39,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://github.com/nickhuynhq/"
+          href="https://www.linkedin.com/in/nickhuynhq/"
           className="flex justify-center items-center xl:justify-start text-4xl duration-150 hover:text-headings cursor-pointer"
           target="_blank"
           rel="noopener noreferrer"
