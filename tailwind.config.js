@@ -3,6 +3,7 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       width: {
@@ -25,11 +26,14 @@ module.exports = {
       },
       backgroundColor: {
         primary: '#F1F1F2',
+        darkPrimary: "#2E3440",
+        darkSecondary: "#4C566A",
         blur: '#030303',
       },
       colors: {
         primary: 'rgb(22, 24, 35)',
-        headings: '#2861f6'
+        headings: '#2861f6',
+        darkHeadings: '#4C566A'
       },
       height: {
         '88vh': '88vh',
