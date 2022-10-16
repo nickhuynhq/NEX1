@@ -39,10 +39,10 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
     }
 
     if (isVisible) {
-      videoRef.current!.play();
+      videoRef?.current?.play();
     } else {
       if (videoRef?.current?.play) {
-        videoRef.current!.pause();
+        videoRef?.current?.pause();
       }
     }
   }, [isVisible, isVideoMuted]);
@@ -86,10 +86,10 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
           onMouseLeave={() => setIsHover(false)}
           className="rounded-3xl"
         >
-          <Link href={`/detail/${post._id}`}>
-            <VisibilitySensor
-              onChange={(isVisible: boolean) => setIsVisible(isVisible)}
-            >
+          <VisibilitySensor
+            onChange={(isVisible: boolean) => setIsVisible(isVisible)}
+          >
+            <Link href={`/detail/${post._id}`}>
               <video
                 loop
                 autoPlay
@@ -97,8 +97,8 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
                 src={post.video.asset.url}
                 className="lg:w-[600px] h-[480px] md:h-[480px] lg:h-[528px] w-[280px] rounded-2xl cursor-pointer bg-gray-100 dark:bg-black"
               ></video>
-            </VisibilitySensor>
-          </Link>
+            </Link>
+          </VisibilitySensor>
 
           {/* Displaying Video Control Buttons */}
           {isHover && (
