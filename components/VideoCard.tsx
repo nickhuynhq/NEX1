@@ -41,7 +41,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
     if (isVisible) {
       videoRef.current!.play();
     } else {
-      if (videoRef.current.play) {
+      if (videoRef?.current?.play) {
         videoRef.current!.pause();
       }
     }
