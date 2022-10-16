@@ -20,14 +20,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <GoogleOAuthProvider
       clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}
     >
-      <div className="dark:bg-darkPrimary">
-        <div className="xl:w-[1280px] overflow-hidden m-auto h-[100vh] px-4 lg:px-10 ">
+      <div className="dark:bg-darkPrimary h-full">
+        <div className="xl:w-[1280px] m-auto px-4 lg:px-10 ">
           <Navbar />
           <div className="flex gap-2 md:gap-20 lg:gap-30">
-            <div className="h-[92vh]">
+            <div className="h-full">
               <Sidebar />
             </div>
-            <div className="mt-4 flex flex-col gap-10 overflow-auto h-[88vh] w-full">
+            <div className="mt-4 flex flex-col gap-10 overflow-auto h-[100vh] w-full">
               <Component {...pageProps} />
             </div>
           </div>

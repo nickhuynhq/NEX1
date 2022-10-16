@@ -81,7 +81,7 @@ const Upload = () => {
               Post a Video to your account
             </p>
           </div>
-          <div className="border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100">
+          <div className="border-dashed rounded-xl border-4 border-gray-300 flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100">
             {isLoading ? (
               <p>Uploading...</p>
             ) : (
@@ -137,11 +137,11 @@ const Upload = () => {
             type="text"
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
-            className="rounded outline-none text-md border-2 border-gray-200 p-2"
+            className="rounded outline-none text-md border-2 border-gray-300 p-2"
           />
           <label className="text-md font-medium">Choose a Category</label>
           <select
-            className="outline-none border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
+            className="outline-none border-2 border-gray-300 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
             onChange={(e) => setCategeory(e.target.value)}
           >
             {topics.map((topic) => (

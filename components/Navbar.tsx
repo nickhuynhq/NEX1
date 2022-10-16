@@ -31,7 +31,7 @@ const Navbar = () => {
   }, [userProfile]);
 
   return (
-    <nav className="w-full flex justify-between items-center dark:border-[#3B4252] border-blue-200 border-b-2 py-4 px-4">
+    <nav className="w-full flex justify-between items-center dark:border-[#3B4252] border-gray-300 border-b-2 py-4 px-4">
       <Link href="/">
         <div className="w-[6.25rem] md:w-[8.125rem]">
           <Image
@@ -67,7 +67,7 @@ const Navbar = () => {
         {user ? (
           <div className="flex gap-5 md:gap-6">
             <Link href="/upload">
-              <button className="border-2 dark:border-none dark:text-white px-2 md:px-4 text-md font-semibold rounded-md duration-150 flex items-center gap-2 hover:bg-headings hover:border-white hover:text-white">
+              <button className="border-2 dark:border-none dark:text-gray-300 px-2 md:px-4 text-md font-semibold rounded-md duration-150 flex items-center gap-2 hover:bg-headings hover:border-white hover:text-white">
                 <IoMdAdd className="text-xl" /> {` `}
                 <span className="hidden md:block">Upload</span>
               </button>

@@ -28,6 +28,7 @@ module.exports = {
         primary: '#F1F1F2',
         darkPrimary: "#2E3440",
         darkSecondary: "#4C566A",
+        darkBorder: "#3B4252",
         blur: '#030303',
       },
       colors: {

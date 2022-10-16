@@ -38,7 +38,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
   }, [isVideoMuted]);
 
   return (
-    <div className="flex flex-col border-b-2 border-gray-200 pb-6 mr-8">
+    <div className="flex flex-col border-b-2 border-gray-300 pb-6 mr-8">
       {/* Video Heading and Labels */}
       <div>
         <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
