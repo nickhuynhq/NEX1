@@ -32,7 +32,7 @@ const Comments = ({
   const { userProfile, allUsers } = useAuthStore();
 
   return (
-    <div className="border-t-2 border-gray-300 pt-4 px-1 md:px-10 mt-4 bg-[#F8F8F8] border-b-2 lg:pb-0 pb-[100px]">
+    <div className="border-t-2 border-gray-300 dark:border-none pt-4 px-1 md:px-10 mt-4 bg-[#F8F8F8] dark:bg-darkSecondary border-b-2 lg:pb-0 pb-[100px]">
       <div className="overflow-scroll lg:h-[40vh]">
         {comments?.length ? (
           comments.map((item, idx) => (
@@ -54,11 +54,11 @@ const Comments = ({
                             />
                           </div>
                           <div className="hidden xl:block">
-                            <p className="flex gap-1 items-center text-md font-bold text-primary lowercase">
+                            <p className="flex gap-1 items-center text-md font-bold text-primary dark:text-gray-100 lowercase">
                               {user.userName.replaceAll(" ", "")}
                               <GoVerified className="text-blue-400" />
                             </p>
-                            <p className="capitalized text-gray-400 text-xs">
+                            <p className="capitalized text-gray-400 dark:text-gray-200 text-xs">
                               {user.userName}
                             </p>
                           </div>
@@ -66,7 +66,7 @@ const Comments = ({
                       </Link>
                       {/* The Comment Message */}
                       <div>
-                        <p>{item.comment}</p>
+                        <p className="dark:text-gray-100">{item.comment}</p>
                       </div>
                     </div>
                   )

@@ -80,7 +80,7 @@ const Detail = ({ postDetails }: IProps) => {
   if (!post) return null;
 
   return (
-    <div className="flex w-full justify-center lg:absolute lg:left-0 md:top-0 bg-white flex-wrap lg:flex-nowrap">
+    <div className="flex w-full justify-center lg:absolute lg:left-0 md:top-0 bg-white dark:bg-darkPrimary flex-wrap lg:flex-nowrap">
       {/* Video section (Left Side) */}
       <div className="relative flex-2 w-[1000]px lg:w-9/12 flex justify-center items-center bg-black bg-no-repeat bg-cover bg-center">
         <div className="absolute top-6 left-2 lg:left-6 flex gap-6 z-50">
@@ -144,19 +144,19 @@ const Detail = ({ postDetails }: IProps) => {
             </div>
             <Link href="/">
               <div className="flex justify-center flex-col gap-2">
-                <p className="flex gap-2 items-center text-sm md:text-lg font-bold text-primary">
+                <p className="flex gap-2 items-center text-sm md:text-lg font-bold text-primary dark:text-gray-200">
                   {post.postedBy.userName}
                   {` `}
                   <GoVerified className="text-blue-400 text-md" />
                 </p>
-                <p className="capitalized font-md text-xs md:text-sm text-grey-500 sm:hidden md:block">
+                <p className="capitalized font-md text-xs md:text-sm text-grey-500 sm:hidden md:block dark:text-gray-400">
                   {post.postedBy.userName}
                 </p>
               </div>
             </Link>
           </div>
         </div>
-        <p className="px-6 text-md lg:text-lg text-gray-600">{post.caption}</p>
+        <p className="px-6 text-md lg:text-lg text-gray-600 dark:text-gray-200">{post.caption}</p>
         <div className="mt-10 px-10">
           {userProfile && (
             <LikeButton
