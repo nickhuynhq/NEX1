@@ -19,13 +19,13 @@ const List = ({ items, mt }: { items: string[]; mt: boolean }) => (
 const Footer = () => {
   return (
     <div>
-      <div className="mt-6 hidden xl:block">
+      <div className="mt-6 hidden xl:block dark:text-gray-300">
         <List items={footerList1} mt={false} />
         <List items={footerList2} mt />
         <List items={footerList3} mt />
-        <p className="text-grey-400 text-sm mt-5">2022 NEX1</p>
+        <p className="text-grey-400 dark:text-gray-300 text-sm mt-5">2022 NEX1</p>
       </div>
-      <div className="flex flex-col mt-5 gap-3">
+      <div className="flex flex-col mt-5 gap-3 dark:text-gray-300">
         <a
           href="https://github.com/nickhuynhq/"
           className="flex justify-center items-center xl:justify-start text-4xl duration-150 hover:text-headings cursor-pointer"
