@@ -72,8 +72,8 @@ const Upload = () => {
   };
 
   return (
-    <div className="flex w-full h-[100vh] absolute left-0 top-[5rem] mb-10 pt-10 lg:pt-20 bg-[#F8F8F8] dark:bg-darkSecondary justify-center">
-      <div className="bg-white dark:bg-darkPrimary rounded-lg xl:h=[80vh] w-[60%] flex gap-6 flex-wrap justify-around items-center p-14 pt-6">
+    <div className="flex w-full h-[125vh] absolute left-0 top-[5rem] mb-10 py-10 lg:py-20 bg-[#F8F8F8] dark:bg-darkSecondary justify-center">
+      <div className="bg-white dark:bg-darkPrimary rounded-lg xl:h=50 w-[60%] flex gap-12 flex-wrap justify-center items-center">
         <div>
           <div>
             <p className="text-2xl dark:text-white font-bold">Upload Video</p>
