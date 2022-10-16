@@ -27,7 +27,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             <div className="h-full">
               <Sidebar />
             </div>
-            <div className="mt-4 flex flex-col gap-10 overflow-auto h-[100vh] w-full">
+            <div className="mt-4 flex flex-col gap-10 overflow-auto h-[120vh] w-full">
               <Component {...pageProps} />
             </div>
           </div>
