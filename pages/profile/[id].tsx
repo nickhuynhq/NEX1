@@ -36,11 +36,11 @@ const Profile = ({ data }: IProps) => {
   return (
     <div className="w-full">
       <div className="flex gap-6 md:gap-10 mb-4 w-full">
-        <div className="w-16 h-16 md:w-32 md:h-32">
+        <div className="w-16 h-16 md:w-24 md:h-24">
           <Image
             src={user.image}
-            width={120}
-            height={120}
+            width={100}
+            height={100}
             className="rounded-full"
             alt="user profile"
             layout="responsive"
@@ -73,7 +73,7 @@ const Profile = ({ data }: IProps) => {
           </p>
         </div>
 
-        <div className="flex gap-6 flex-wrap md:justify-start">
+        <div className="flex gap-6 flex-wrap md:justify-start dark:text-white">
           {videosList.length > 0 ? (
             videosList.map((post: Video, idx: number) => (
               <VideoCard post={post} key={idx}/>

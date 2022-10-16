@@ -32,8 +32,8 @@ const Comments = ({
   const { userProfile, allUsers } = useAuthStore();
 
   return (
-    <div className="border-t-2 border-gray-300 dark:border-none pt-4 px-1 md:px-10 mt-4 bg-[#F8F8F8] dark:bg-darkSecondary border-b-2 lg:pb-0 pb-[100px]">
-      <div className="overflow-scroll lg:h-[40vh]">
+    <div className="border-t-2 border-gray-300 dark:border-none pt-4 px-1 md:px-10 mt-4 bg-[#F8F8F8] dark:bg-darkSecondary border-b-2 lg:pb-0 pb-[100px] rounded-md">
+      <div className="overflow-scroll lg:h-[40vh] dark:text-white">
         {comments?.length ? (
           comments.map((item, idx) => (
             <>
