@@ -5,6 +5,7 @@ import Link from "next/link";
 import { HiVolumeUp, HiVolumeOff } from "react-icons/hi";
 import { BsFillPlayFill, BsFillPauseFill } from "react-icons/bs";
 import { GoVerified } from "react-icons/go";
+import VisibilitySensor from "react-visibility-sensor";
 
 import { Video } from "./../types";
 
@@ -15,7 +16,8 @@ interface IProps {
 const VideoCard: NextPage<IProps> = ({ post }) => {
   const [isHover, setIsHover] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [isVideoMuted, setIsVideoMuted] = useState(false);
+  const [isVideoMuted, setIsVideoMuted] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -30,12 +32,20 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
     }
   };
 
-  // Check if Video if muted, and set video audio to muted
+  // Check if Video if muted and in view, then play video and video audio to muted
   useEffect(() => {
     if (videoRef?.current) {
       videoRef.current.muted = isVideoMuted;
     }
-  }, [isVideoMuted]);
+
+    if (isVisible) {
+      videoRef.current!.play();
+    } else {
+      if (videoRef.current.play) {
+        videoRef.current!.pause();
+      }
+    }
+  }, [isVisible, isVideoMuted]);
 
   return (
     <div className="flex flex-col border-b-2 border-gray-300 dark:border-gray-600  pb-6 mr-8">
@@ -77,12 +87,17 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
           className="rounded-3xl"
         >
           <Link href={`/detail/${post._id}`}>
-            <video
-              loop
-              ref={videoRef}
-              src={post.video.asset.url}
-              className="lg:w-[600px] h-[480px] md:h-[480px] lg:h-[528px] w-[280px] rounded-2xl cursor-pointer bg-gray-100 dark:bg-black"
-            ></video>
+            <VisibilitySensor
+              onChange={(isVisible: boolean) => setIsVisible(isVisible)}
+            >
+              <video
+                loop
+                autoPlay
+                ref={videoRef}
+                src={post.video.asset.url}
+                className="lg:w-[600px] h-[480px] md:h-[480px] lg:h-[528px] w-[280px] rounded-2xl cursor-pointer bg-gray-100 dark:bg-black"
+              ></video>
+            </VisibilitySensor>
           </Link>
 
           {/* Displaying Video Control Buttons */}

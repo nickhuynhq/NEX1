@@ -17,6 +17,14 @@ export default {
         },
       },
       {
+        name: 'thumbnail',
+        title: 'Thumbnail',
+        type: 'file',
+        options: {
+          hotspot: true,
+        },
+      },
+      {
         name: 'userId',
         title: 'UserId',
         type: 'string',
