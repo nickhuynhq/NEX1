@@ -14,7 +14,7 @@ const SuggestedAccounts = () => {
   }, [fetchAllUsers]);
 
   return (
-    <div className="xl:border-b-2 border-gray-300 pb-4">
+    <div className="xl:border-b-2 border-gray-300 dark:border-gray-600 pb-4">
       <p className="text-gray-500 dark:text-gray-300 font-semi-bold m-3 mt-4 hidden xl:block">
         Suggested Accounts
       </p>

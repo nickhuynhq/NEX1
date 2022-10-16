@@ -72,16 +72,16 @@ const Upload = () => {
   };
 
   return (
-    <div className="flex w-full h-full absolute left-0 top-[5rem] mb-10 pt-10 lg:pt-20 bg-[#F8F8F8] justify-center">
-      <div className="bg-white rounded-lg xl:h=[80vh] w-[60%] flex gap-6 flex-wrap justify-around items-center p-14 pt-6">
+    <div className="flex w-full h-[100vh] absolute left-0 top-[5rem] mb-10 pt-10 lg:pt-20 bg-[#F8F8F8] dark:bg-darkSecondary justify-center">
+      <div className="bg-white dark:bg-darkPrimary rounded-lg xl:h=[80vh] w-[60%] flex gap-6 flex-wrap justify-around items-center p-14 pt-6">
         <div>
           <div>
-            <p className="text-2xl font-bold">Upload Video</p>
-            <p className="text-md text-gray-400 mt-1">
+            <p className="text-2xl dark:text-white font-bold">Upload Video</p>
+            <p className="text-md text-gray-400 dark:text-gray-200 mt-1">
               Post a Video to your account
             </p>
           </div>
-          <div className="border-dashed rounded-xl border-4 border-gray-300 flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100">
+          <div className=" duration-150 border-dashed rounded-xl border-4 border-gray-300 dark:text-white flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100 dark:hover:bg-darkSecondary dark:hover:border-red-600">
             {isLoading ? (
               <p>Uploading...</p>
             ) : (
@@ -104,13 +104,13 @@ const Upload = () => {
                         </p>
                         <p className="text-xl font-semibold">Upload Video</p>
                       </div>
-                      <p className="text-gray-400 text-center mt-10 text-sm leading-10">
+                      <p className="text-gray-400 dark:text-gray-200 text-center mt-10 text-sm leading-10">
                         MP4 or WebM or ogg <br />
                         720x1280 or higher <br />
                         Up to 10 minutes <br />
                         Less than 2GB
                       </p>
-                      <p className="bg-headings text-center mt-10 rounded text-white text-md font-medium p-2 w-52 outline-none">
+                      <p className="bg-headings text-center mt-10 rounded text-white text-md font-medium p-2 w-52 outline-none duration-150 dark:hover:bg-blue-800">
                         Select File
                       </p>
                     </div>
@@ -125,13 +125,13 @@ const Upload = () => {
               </div>
             )}
             {wrongFileType && (
-              <p className="text-center text-xl text-red-400 text-semibold mt-4 w-[250px]">
+              <p className="text-center text-xl text-red-400 text-semibold mt-4 w-[250px] ">
                 Please select a video file
               </p>
             )}
           </div>
         </div>
-        <form className="flex flex-col gap-3 pb-10">
+        <form className="flex flex-col gap-3 pb-10 dark:text-white">
           <label className="text-md font-medium">Caption</label>
           <input
             type="text"
@@ -147,7 +147,7 @@ const Upload = () => {
             {topics.map((topic) => (
               <option
                 key={topic.name}
-                className="outline-none capitalize bg-white text-gray-700 text-md p-2 hover:bg-slate-300"
+                className="outline-none capitalize bg-white text-gray-700 text-md p-2 duration-150 hover:bg-slate-300"
                 value={topic.name}
               >
                 {topic.name}
@@ -158,14 +158,14 @@ const Upload = () => {
             <button
               onClick={() => {}}
               type="button"
-              className="border-gray-300 border-2 text-md font-mediunm p-2 rounded w-28 lg:w-44 outline-none"
+              className="border-gray-300 border-2 text-md font-mediunm p-2 rounded w-28 lg:w-44 outline-none duration-150 hover:bg-white hover:text-primary"
             >
               Discard
             </button>
             <button
               onClick={handlePost}
               type="button"
-              className="bg-headings text-white border-2 text-md font-mediunm p-2 rounded w-28 lg:w-44 outline-none"
+              className="bg-headings text-white border-2 text-md font-mediunm p-2 rounded w-28 lg:w-44 duration-150 outline-none dark:border-none hover:bg-blue-800"
             >
               Post
             </button>

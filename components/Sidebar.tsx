@@ -26,7 +26,7 @@ const Sidebar = () => {
 
       {showSidebar && (
         <div className="xl:w-[22rem] w-20 flex flex-col justify-start mb-10 border-r-2 border-gray-100 dark:border-darkBorder xl:border-0 py-3 ">
-          <div className="xl:border-b-2 border-gray-300 dark:border-darkBorder xl:pb-4">
+          <div className="xl:border-b-2 border-gray-300 dark:border-gray-600 xl:pb-4">
             <Link href="/">
               <div className={normalLink}>
                 <p className="text-2xl">
