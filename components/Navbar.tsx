@@ -5,16 +5,17 @@ import Router, { useRouter } from "next/router";
 import { BiSearch } from "react-icons/bi";
 import { IoMdAdd } from "react-icons/io";
 import Logo from "../assets/logo/nex1-logo.png";
+import LogoDark from "../assets/logo/nex1-dark.png";
 import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { createOrGetUser } from "../utils";
 import useAuthStore from "../store/authStore";
 import { IUser } from "../types";
-import DarkMode from "./DarkMode";
 
 const Navbar = () => {
   // Hook to store user information persistently
   const [user, setUser] = useState<IUser | null>();
   const [searchValue, setSearchValue] = useState("");
+
   const { userProfile, addUser, removeUser } = useAuthStore();
   const router = useRouter();
 
