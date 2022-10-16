@@ -12,12 +12,19 @@ https://nex1-eta.vercel.app/
 ## Project Screenshot
 ![nex1](https://user-images.githubusercontent.com/71597829/196006148-b4e882fe-1f64-40de-9514-dbceed523df2.jpg)
 
+## Update Log
+**(October 16, 2022)**
+- Fix bug where Video is not centered in mobile view
+- Styling and formatting adjustments
+- Add Dark Mode
+
 ## Current Features
 - Video Playback 
 - Google Accounts
 - Video Upload
 - Video Like & Comment
 - Video & Account Search
+- **DARK MODE** 
 
 ## Tech Stack
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
