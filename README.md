@@ -21,17 +21,17 @@ https://nex1-eta.vercel.app/
 **(October 16, 2022)**
 - Fix bug where Video is not centered in mobile view
 - Styling and formatting adjustments
-- Add Dark Mode
+- Add **Dark Mode**
 - Videos will now autoplay only in view
 - Video thumnails now load on iOS and Andriod mobile devices
 
 ## Current Features
-- Video Playback 
-- Google Accounts
-- Video Upload
-- Video Like & Comment
-- Video & Account Search
-- **DARK MODE** 
+- Video Playback 🎥
+- Google Accounts 🙋
+- Video Upload ⬆️
+- Video Like & Comment 👍
+- Video & Account Search 🔎
+- **DARK MODE** 😈
 
 ## Tech Stack
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
