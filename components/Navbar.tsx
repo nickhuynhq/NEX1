@@ -98,7 +98,9 @@ const Navbar = () => {
             onError={() => console.log("Error")}
           />
         )}
+        
       </div>
+      
     </nav>
   );
 };

@@ -80,7 +80,7 @@ const Detail = ({ postDetails }: IProps) => {
   if (!post) return null;
 
   return (
-    <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
+    <div className="flex w-full justify-center lg:absolute lg:left-0 md:top-0 bg-white flex-wrap lg:flex-nowrap">
       {/* Video section (Left Side) */}
       <div className="relative flex-2 w-[1000]px lg:w-9/12 flex justify-center items-center bg-black bg-no-repeat bg-cover bg-center">
         <div className="absolute top-6 left-2 lg:left-6 flex gap-6 z-50">
@@ -125,10 +125,10 @@ const Detail = ({ postDetails }: IProps) => {
       </div>
 
       {/* Details section (right side) */}
-      <div className="relative w-[1000px] md:w-[900px] lg:w-[700px] px-6">
+      <div className="relative w-[360px] md:w-[600px] lg:w-[700px] md:px-6">
         <div className="lg:mt-20 mt-10 mb-4">
-          <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
-            <div className="ml-4 md:w-20 md:h-20 w-16 h-16">
+          <div className="flex items-center gap-3 p-2 cursor-pointer font-semibold rounded">
+            <div className="ml-4 md:w-20 md:h-20 w-12 h-12">
               <Link href="/">
                 <>
                   <Image
@@ -143,20 +143,20 @@ const Detail = ({ postDetails }: IProps) => {
               </Link>
             </div>
             <Link href="/">
-              <div className="flex mt-3 flex-col gap-2">
-                <p className="flex gap-2 items-center md:text-md font-bold text-primary">
+              <div className="flex justify-center flex-col gap-2">
+                <p className="flex gap-2 items-center text-sm md:text-lg font-bold text-primary">
                   {post.postedBy.userName}
                   {` `}
                   <GoVerified className="text-blue-400 text-md" />
                 </p>
-                <p className="capitalized font-md text-xs text-grey-500 sm:hidden md:block">
+                <p className="capitalized font-md text-xs md:text-sm text-grey-500 sm:hidden md:block">
                   {post.postedBy.userName}
                 </p>
               </div>
             </Link>
           </div>
         </div>
-        <p className="px-6 text-lg text-gray-600">{post.caption}</p>
+        <p className="px-6 text-md lg:text-lg text-gray-600">{post.caption}</p>
         <div className="mt-10 px-10">
           {userProfile && (
             <LikeButton

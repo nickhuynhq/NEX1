@@ -18,7 +18,7 @@ const SuggestedAccounts = () => {
       <p className="text-gray-500 font-semi-bold m-3 mt-4 hidden xl:block">
         Suggested Accounts
       </p>
-      <div>
+      <div className="flex flex-col items-center lg:items-start">
         {/* Take only first 6 users */}
         {allUsers.slice(0, 6).map((user: IUser) => (
           <Link href={`/profile/${user._id}`} key={user._id}>
