@@ -22,6 +22,8 @@ https://nex1-eta.vercel.app/
 - Fix bug where Video is not centered in mobile view
 - Styling and formatting adjustments
 - Add Dark Mode
+- Videos will now autoplay only in view
+- Video thumnails now load on iOS and Andriod mobile devices
 
 ## Current Features
 - Video Playback 
