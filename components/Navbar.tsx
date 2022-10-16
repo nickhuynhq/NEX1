@@ -35,7 +35,7 @@ const Navbar = () => {
       <Link href="/">
         <div className="w-[6.25rem] md:w-[8.125rem]">
           <Image
-            className="cursor-pointer"
+            className="cursor-pointer dark:grayscale dark:invert-[1] "
             src={Logo}
             alt="NEX1"
             layout="responsive"
