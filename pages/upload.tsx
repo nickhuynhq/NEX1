@@ -14,7 +14,9 @@ const Upload = () => {
   const [videoAsset, setVideoAsset] = useState<
     SanityAssetDocument | undefined
   >();
+
   const [wrongFileType, setWrongFileType] = useState(false);
+  const [topic, setTopic] = useState<String>(topics[0].name);
   const [caption, setCaption] = useState("");
   const [category, setCategeory] = useState(topics[0].name);
   const [savingPost, setSavingPost] = useState(false);
@@ -28,6 +30,8 @@ const Upload = () => {
 
     // Upload video file to Sanity
     if (fileTyoes.includes(selectedFile.type)) {
+      setIsLoading(true);
+
       client.assets
         .upload("file", selectedFile, {
           contentType: selectedFile.type,
@@ -69,6 +73,15 @@ const Upload = () => {
       await axios.post(`${BASE_URL}/api/post`, document);
       router.push("/");
     }
+
+  };
+
+
+  const handleDiscard = () => {
+    setSavingPost(false);
+    setVideoAsset(undefined);
+    setCaption('');
+    setTopic('');
   };
 
   return (
@@ -81,9 +94,9 @@ const Upload = () => {
               Post a Video to your account
             </p>
           </div>
-          <div className=" duration-150 border-dashed rounded-xl border-4 border-gray-300 dark:text-white flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100 dark:hover:bg-darkSecondary dark:hover:border-red-600">
+          <div className=" duration-150 border-dashed rounded-xl border-4 border-gray-300 dark:text-white flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] p-5 cursor-pointer hover:border-red-300 hover:bg-gray-100 dark:hover:bg-darkSecondary dark:hover:border-red-600">
             {isLoading ? (
-              <p>Uploading...</p>
+              <p className="text-2xl">Uploading...</p>
             ) : (
               <div>
                 {videoAsset ? (
@@ -92,7 +105,7 @@ const Upload = () => {
                       src={videoAsset.url}
                       loop
                       controls
-                      className="rounded-xl h-[450px] mt-16 bg-black"
+                      className="rounded-xl h-[420px] w-full bg-black"
                     ></video>
                   </div>
                 ) : (
@@ -137,17 +150,18 @@ const Upload = () => {
             type="text"
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
-            className="rounded outline-none text-md border-2 border-gray-300 p-2"
+            className="rounded outline-none text-md border-2 dark:text-black border-gray-300 p-2"
+            placeholder="Enter your caption here"
           />
           <label className="text-md font-medium">Choose a Category</label>
           <select
-            className="outline-none border-2 border-gray-300 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
+            className="outline-none border-2 border-gray-300 dark:text-black text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
             onChange={(e) => setCategeory(e.target.value)}
           >
             {topics.map((topic) => (
               <option
                 key={topic.name}
-                className="outline-none capitalize bg-white text-gray-700 text-md p-2 duration-150 hover:bg-slate-300"
+                className="outline-none capitalize bg-white text-gray-700text-md p-2 duration-150 hover:bg-slate-300"
                 value={topic.name}
               >
                 {topic.name}
@@ -156,7 +170,7 @@ const Upload = () => {
           </select>
           <div className="flex gap-6 mt-10">
             <button
-              onClick={() => {}}
+              onClick={handleDiscard}
               type="button"
               className="border-gray-300 border-2 text-md font-mediunm p-2 rounded w-28 lg:w-44 outline-none duration-150 hover:bg-white hover:text-primary"
             >
