@@ -18,6 +18,13 @@ https://nex1-eta.vercel.app/
 
 
 ## Update Log
+
+**(October 27, 2022)**
+- Fix upload prompt not appearing when uploading
+- Video preview not styled correctly on upload page
+- Dark mode input fields not visible on upload page
+
+
 **(October 16, 2022)**
 - Fix bug where Video is not centered in mobile view
 - Styling and formatting adjustments
