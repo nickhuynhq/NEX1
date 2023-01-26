@@ -11,7 +11,7 @@ https://nex1-eta.vercel.app/
 
 ## Project Screenshot
 **Light Mode**
-![nex1](https://user-images.githubusercontent.com/71597829/196006148-b4e882fe-1f64-40de-9514-dbceed523df2.jpg)
+![nex1](https://user-images.githubusercontent.com/71597829/214969111-4d4e17ac-74b7-416e-b461-b83b88a08e4c.jpg)
 
 **Dark Mode**
 ![nex1_dark](https://user-images.githubusercontent.com/71597829/196017585-98b7df98-01e3-4912-ac16-815afa5c29a0.jpg)
