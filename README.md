@@ -2,7 +2,7 @@
 
 **NEX1 is a tik tok inspired application where users can upload, share, and interact with short video clips!**
 
-This project was created to experiment with NEXT.js, TypeScript, and Tailwind CSS! 😆
+This project was created to experiment with NEXT.js, TypeScript, and Tailwind CSS!
 Backend was deployed on Sanity CMS and data is called used GROQ (A GraphQL like query language).
 
 Please use this link to demo the live site!
